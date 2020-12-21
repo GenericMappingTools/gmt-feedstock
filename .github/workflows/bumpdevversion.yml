@@ -101,7 +101,7 @@ jobs:
           branch: update/${{ steps.version_info.outputs.NEW_VERSION_STRING }}
           delete-branch: true
           draft: true
-          #push-to-fork: GenericMappingTools/gmt-feedstock
+          push-to-fork: GenericMappingTools/gmt-feedstock
           token: ${{ secrets.GITHUB_TOKEN }}
           #token: ${{ steps.generate-token.outputs.token }}
           body: |
