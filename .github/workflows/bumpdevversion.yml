@@ -10,7 +10,7 @@ jobs:
   bump-dev-version:
     name: Bump GMT development version
     runs-on: ubuntu-latest
-    #if: github.repository == 'GenericMappingTools/gmt-feedstock'
+    if: github.repository == 'GenericMappingTools/gmt-feedstock'
 
     steps:
       # Generate token from GenericMappingTools bot
@@ -102,6 +102,7 @@ jobs:
           draft: true
           push-to-fork: GenericMappingTools/gmt-feedstock
           #push-to-fork: conda-forge/gmt-feedstock
+          token: ${{ secrets.GITHUB_TOKEN }}
           #token: ${{ steps.generate-token.outputs.token }}
           body: |
             **This is an automated pull request!**
