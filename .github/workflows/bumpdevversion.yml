@@ -10,7 +10,7 @@ jobs:
   bump-dev-version:
     name: Bump GMT development version
     runs-on: ubuntu-latest
-    if: github.repository == 'GenericMappingTools/gmt-feedstock'
+    #if: github.repository == 'GenericMappingTools/gmt-feedstock'
 
     steps:
       # Generate token from GenericMappingTools bot
