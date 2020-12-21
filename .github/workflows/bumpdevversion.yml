@@ -14,11 +14,11 @@ jobs:
 
     steps:
       # Generate token from GenericMappingTools bot
-      #- uses: tibdex/github-app-token@v1.1.1
-      #  id: generate-token
-      #  with:
-      #    app_id: ${{ secrets.APP_ID }}
-      #    private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      - uses: tibdex/github-app-token@v1.1.1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       # Checkout current git repository
       - name: Checkout
@@ -101,8 +101,8 @@ jobs:
           delete-branch: true
           draft: true
           push-to-fork: GenericMappingTools/gmt-feedstock
-          token: ${{ secrets.GITHUB_TOKEN }}
-          #token: ${{ steps.generate-token.outputs.token }}
+          #token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.generate-token.outputs.token }}
           body: |
             **This is an automated pull request!**
 
